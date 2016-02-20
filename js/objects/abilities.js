@@ -9,9 +9,9 @@ function Ability(id, type, method, target, inputType, inputVal, multiplier) {
 }
 
 Ability.prototype.meleeAttack = function (user, target) {
-  var input = "user.current" + this.inputType + "-= this.inputVal;"
+  var input = "user.stats.current" + this.inputType + " -= this.inputVal;"
   eval(input);
-  target.currentHP -= user.attack * this.multiplier;
+  target.stats.currentHP -= user.stats.attack * this.multiplier;
 };
 
 var defineAbilities = function() {

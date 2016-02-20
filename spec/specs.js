@@ -4,31 +4,28 @@ describe('Battle', function() {
   var attack = new Ability("Attack", "combat", "meleeAttack", "opponent", "AP", 30, 1);
   var heavyAttack = new Ability("Heavy Attack", "combat", "meleeAttack", "opponent", "AP", 50, 2);
 
-  var playerCombatDocket = [lightAttack, lightAttack];
-  var enemyCombatDocket = [heavyAttack];
-
   var abilities = [lightAttack, attack, heavyAttack];
 
-  var player = new Character("Bobbie", "player", 40, 60, 20);
-  var enemy = new Character("Cheato", "enemy", 30, 100, 10);
+  var player = new Character("Bobbie", "player", new Stats(2, 2, 2, 3, 3, 3));
+  var enemy = new Character("Cheato", "enemy", new Stats(3, 3, 3, 2, 2, 2));
 
   var battle = new Battle(player, enemy);
   battle.playerCombatDocket.push(lightAttack, lightAttack);
-  battle.enemyCombatDocket.push(heavyAttack);
+  battle.enemyCombatDocket.push(attack);
 
   it("will execute melee attacks from combat dockets", function() {
     battle.executeCombat();
-    expect(enemy.currentHP).to.equal(10);
-    expect(enemy.currentAP).to.equal(50);
-    expect(player.currentHP).to.equal(20);
-    expect(player.currentAP).to.equal(40);
+    expect(enemy.stats.currentHP).to.equal(130);
+    expect(enemy.stats.currentAP).to.equal(0);
+    expect(player.stats.currentHP).to.equal(70);
+    expect(player.stats.currentAP).to.equal(0);
   });
 });
 
 describe('checkSpeed', function() {
 
-    var player = new Character("Bobbie", "player", 40, 60, 20);
-    var enemy = new Character("Cheato", "enemy", 30, 100, 10);
+    var player = new Character("Bobbie", "player", new Stats(2, 2, 2, 3, 3, 3));
+    var enemy = new Character("Cheato", "enemy", new Stats(3, 3, 3, 2, 2, 2));
 
     var isFirst = checkFirst(player, enemy);
     var isSecond = checkSecond(isFirst);

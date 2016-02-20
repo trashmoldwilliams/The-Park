@@ -32,9 +32,9 @@ Battle.prototype.executeCombat = function() {
 };
 
 var checkFirst = function(player, enemy) {
-  if (player.maxAP > enemy.maxAP) {
+  if (player.stats.maxAP > enemy.stats.maxAP) {
     return "player";
-  } else if (enemy.maxAP) {
+  } else if (enemy.stats.maxAP) {
     return "enemy";
   } else {
     return "tie";

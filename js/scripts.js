@@ -6,9 +6,9 @@ $(document).ready(function() {
   var heavyAttack = new Ability("Heavy Attack", "combat", "meleeAttack", "opponent", "AP", 50, 2);
 
   //Define Characters
-	var player = new Character("Bobbie", "player", 300, 30, 20);
+	var player = new Character("Bobbie", "player", new Stats(2, 2, 2, 3, 3, 3));
 	player.abilities.push(lightAttack, attack);
-  var enemy = new Character("Cheato", "enemy", 50, 50, 50);
+  var enemy = new Character("Cheato", "enemy", new Stats(3, 3, 3, 2, 2, 2));
   player.abilities.push(lightAttack, attack, heavyAttack);
 
   updateHUD(player);

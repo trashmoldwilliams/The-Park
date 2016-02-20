@@ -1,11 +1,7 @@
-function Character(id, alignment, hp, ap, attack) {
+function Character(id, alignment, stats) {
   this.id = id;
   this.alignment = alignment;
-  this.currentHP = hp;
-  this.maxHP = hp;
-  this.currentAP = ap;
-  this.maxAP = ap;
-  this.attack = attack;
+  this.stats = stats;
   this.abilities = [];
 }
 
