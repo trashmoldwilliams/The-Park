@@ -1,0 +1,150 @@
+body {
+	background-color: black;
+}
+
+.pageFraction {
+	width: 100%;
+	height: 300px;
+}
+
+.window {
+	border: 15px solid grey;
+	border-style: double;
+	border-radius: 5px;
+	font-family: "Lucida Console", Monaco, monospace;
+	color: grey;
+}
+
+.menuOptions {
+	font-size: 30px;
+	padding-left: 10%;
+	padding-top: 2%
+}
+
+#gameLogContainer {
+	width: 100%;
+	height: 250px;
+	position: relative;
+}
+
+#viewport {
+	width: 100%;
+	height: 400px;
+	background-color: #ffffcc;
+	position: relative;
+}
+
+#controls {
+	width: 100%;
+	height: 250px;
+}
+
+#hud {
+	position: relative;
+  top: 12%;
+  transform: translateY(-50%);
+	width: 100%;
+	height: 6%;
+	text-align: center;
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 20px;
+	color: grey;
+}
+
+#mapContainer {
+	background-color: #99ccff;
+	width: 125px;
+	height: 125px;
+	border-radius: 10px;
+	position: absolute;
+	margin-right: 1%;
+	margin-bottom: 1%;
+  bottom: 0;
+	right: 0;
+}
+
+#confirmCombat {
+	border-radius: 10px;
+	font-size: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.subMenu {
+	width: 100%;
+	height: 158px;
+	overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+
+.nav-tabs > li > a {
+	border-radius: 0px;
+}
+
+a {
+	color: grey;
+}
+
+a:hover {
+	color: grey;
+}
+
+#menu {
+	height: 230px;
+	width: 60%;
+	margin-top: 6%;
+	margin-left: 3%;
+	float: left;
+}
+
+#toolMenu {
+
+}
+
+#toolMenuTwoHand {
+	display: none;
+}
+
+#inventoryMenu {
+
+}
+
+#physicalMenu {
+
+}
+
+#mentalMenu {
+
+}
+
+#statMenu {
+
+}
+
+#moveMenu {
+
+}
+
+#combatDocket {
+	width: 31%;
+	height: 230px;
+	float: right;
+	margin-top: 6%;
+	margin-right: 3%;
+	overflow-y: scroll;
+}
+
+#gameLog {
+	width: 80%;
+	height: 180px;
+	border: 15px solid grey;
+	border-style: double;
+	border-radius: 5px;
+	margin: 0 auto;
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+	overflow-y: scroll;
+}
