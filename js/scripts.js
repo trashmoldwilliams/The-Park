@@ -1,8 +1,10 @@
-function Character(id, alignment, hp, attack, abilities) {
+function Character(id, alignment, hp, ap, attack, abilities) {
   this.id = id;
   this.alignment = alignment;
   this.currentHP = hp;
   this.maxHP = hp;
+  this.currentAP = ap;
+  this.maxAP = ap;
   this.attack = attack;
   this.abilities = abilities;
 }
@@ -19,15 +21,19 @@ function Character(id, alignment, hp, attack, abilities) {
 //   }
 // };
 
-function Ability(id, type, method, target, multiplier) {
+function Ability(id, type, method, target, inputType, inputVal, multiplier) {
   this.id = id;
   this.type = type;
   this.method = method;
   this.target = target;
+  this.inputType = inputType;
+  this.inputVal = inputVal;
   this.multiplier = multiplier;
 }
 
 Ability.prototype.meleeAttack = function (user, target) {
+  var input = "user.current" + this.inputType + "-= this.inputVal;"
+  eval(input);
   target.currentHP -= user.attack * this.multiplier;
 };
 
