@@ -19,15 +19,16 @@ function Character(id, alignment, hp, attack, abilities) {
 //   }
 // };
 
-function Ability(id, type, method, target) {
+function Ability(id, type, method, target, multiplier) {
   this.id = id;
   this.type = type;
   this.method = method;
   this.target = target;
+  this.multiplier = multiplier;
 }
 
 Ability.prototype.meleeAttack = function (user, target) {
-  target.currentHP += -(user.attack / 2);
+  target.currentHP -= user.attack * this.multiplier;
 };
 
 function Battle(player, enemy) {
