@@ -1,4 +1,4 @@
-function Character(id, alignment, hp, ap, attack, abilities) {
+function Character(id, alignment, hp, ap, attack) {
   this.id = id;
   this.alignment = alignment;
   this.currentHP = hp;
@@ -6,17 +6,10 @@ function Character(id, alignment, hp, ap, attack, abilities) {
   this.currentAP = ap;
   this.maxAP = ap;
   this.attack = attack;
-  this.abilities = abilities;
+  this.abilities = [];
 }
 
-// Character.prototype.executeAbility = function(abilityID) {
-//   for(var i = 0; i < abilities.Length; i++) {
-//     if(abilityID === abilities[i].id)
-//     {
-//       for(var j = 0; j < abilities[i].methods) {
-//         abilities[i].methods[j]
-//       }
-//       break;
-//     }
-//   }
-// };
+var defineCharacters = function() {
+	
+
+}

@@ -9,10 +9,12 @@ describe('Battle', function() {
 
   var abilities = [lightAttack, attack, heavyAttack];
 
-  var player = new Character("Bobbie", "player", 40, 60, 20, abilities);
-  var enemy = new Character("Cheato", "enemy", 30, 100, 10, abilities);
+  var player = new Character("Bobbie", "player", 40, 60, 20);
+  var enemy = new Character("Cheato", "enemy", 30, 100, 10);
 
-  var battle = new Battle(player, enemy, playerCombatDocket, enemyCombatDocket);
+  var battle = new Battle(player, enemy);
+  battle.playerCombatDocket.push(lightAttack, lightAttack);
+  battle.enemyCombatDocket.push(heavyAttack);
 
   it("will execute melee attacks from combat dockets", function() {
     battle.executeCombat();

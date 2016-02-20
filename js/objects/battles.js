@@ -1,8 +1,8 @@
-function Battle(player, enemy, playerCombatDocket, enemyCombatDocket) {
+function Battle(player, enemy) {
   this.player = player;
   this.enemy = enemy;
-  this.playerCombatDocket = playerCombatDocket;
-  this.enemyCombatDocket = enemyCombatDocket;
+  this.playerCombatDocket = [];
+  this.enemyCombatDocket = [];
 }
 
 Battle.prototype.executeAbility = function (ability, user, opponent) {

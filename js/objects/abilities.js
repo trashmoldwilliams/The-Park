@@ -13,3 +13,7 @@ Ability.prototype.meleeAttack = function (user, target) {
   eval(input);
   target.currentHP -= user.attack * this.multiplier;
 };
+
+var defineAbilities = function() {
+  
+}
