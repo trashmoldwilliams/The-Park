@@ -7,7 +7,7 @@ describe('Battle', function() {
 
   var abilities = [lightAttack];
 
-  var lightAttack = new Ability("Light Attack")
+  var lightAttack = new Ability("lightAttack", "combat", "meleeAttack", "opponent");
 
 
   it("will execute attack ability", function() {

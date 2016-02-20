@@ -19,12 +19,16 @@ function Character(id, alignment, hp, attack, abilities) {
 //   }
 // };
 
-function Ability(id, abilityInfo, damageModifier) {
+function Ability(id, type, method, target) {
   this.id = id;
-  this.abilityInfo = abilityInfo;
-  this.damageModifier = damageModifier;
-  this.target = "opponent";
+  this.type = type;
+  this.method = method;
+  this.target = target;
 }
+
+Ability.prototype.meleeAttack = function (user, target) {
+  target.currentHP += -(user.attack / 2);
+};
 
 function Battle(player, enemy) {
   this.player = player;
@@ -38,5 +42,6 @@ Battle.prototype.executeAbility = function (ability, user, opponent) {
     var target = user;
   }
 
-  target.currentHP += -(user.attack/2);
+  var execution = "ability." + ability.method + "(user, target);";
+  eval(execution);
 };
