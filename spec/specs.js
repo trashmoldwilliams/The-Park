@@ -1,20 +1,22 @@
 describe('Battle', function() {
 
-  var lightAttack = new Ability("Light Attack", "combat", "meleeAttack", "opponent", "AP", 10, .5);
-  var attack = new Ability("Attack", "combat", "meleeAttack", "opponent", "AP", 30, 1);
-  var heavyAttack = new Ability("Heavy Attack", "combat", "meleeAttack", "opponent", "AP", 50, 2);
+  //Define Abilities
+	var abilityPool = defineAbilities();
 
-  var abilities = [lightAttack, attack, heavyAttack];
+  //Define Characters
+	var player = new Character("Bobbie", "player", new Stats(2, 2, 2, 3, 3, 3));
+	player.abilities.push(abilityPool[0], abilityPool[1]);
+  var enemy = new Character("Zebdiel", "enemy", new Stats(3, 3, 3, 2, 2, 2));
+  player.abilities.push(abilityPool[0], abilityPool[1], abilityPool[2]);
 
-  var player = new Character("Bobbie", "player", new Stats(2, 2, 2, 3, 3, 3));
-  var enemy = new Character("Cheato", "enemy", new Stats(3, 3, 3, 2, 2, 2));
+  updateHUD(player, enemy);
+  var currentBattle = new Battle(player, enemy);
 
-  var battle = new Battle(player, enemy);
-  battle.playerCombatDocket.push(lightAttack, lightAttack);
-  battle.enemyCombatDocket.push(attack);
+  currentBattle.playerCombatDocket.push(abilityPool[0], abilityPool[0]);
+  currentBattle.enemyCombatDocket.push(abilityPool[1]);
 
   it("will execute melee attacks from combat dockets", function() {
-    battle.executeCombat();
+    currentBattle.executeCombat();
     expect(enemy.stats.currentHP).to.equal(130);
     expect(enemy.stats.currentAP).to.equal(0);
     expect(player.stats.currentHP).to.equal(70);
