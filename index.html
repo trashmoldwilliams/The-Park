@@ -23,10 +23,140 @@
       </div>
 
       <div id="viewport">
-        <div id="mapContainer">
-
+        <div id="frontEnemyContainer">
+          <img id="frontSprite" src="img/enemies/zebdiel/frontsprite.png">
         </div>
-      </div>
+        <div id="mapContainer">
+          <img id="map" src="img/map/map.png">
+        </div>
+        <div id="enemyInfoContainer">
+          <div id="enemyInfoHeader">
+            <h3>ZEBDIEL <i class="icon-arrow"></i></h3>
+          </div>
+          <div id="enemyInfo">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#stats">STATS</a></li>
+              <li><a data-toggle="tab" href="#skills">SKILLS</a></li>
+              <li><a data-toggle="tab" href="#items">ITEMS</a></li>
+            </ul>
+            <div class="tab-content">
+              <div id="stats" class="tab-pane active">
+               <div id="infoSubMenu">
+                  <span id="enemySpecies">HUMAN</span><span> - LEVEL </span><span id="enemyLevel">15</span>
+                  <br><br>
+                  HP: <span id="currentEnemyHP"></span>
+                  <span> / </span>
+                  <span id="maxEnemyHP"></span>
+                  <br>
+                  AP: <span id="currentEnemyAP"></span>
+                  <span> / </span>
+                  <span id="maxEnemyAP"></span>
+                  <br>
+                  MP: <span id="currentEnemyMP"></span>
+                  <span> / </span>
+                  <span id="maxEnemyMP"></span>
+                  <br>
+                  SP: <span id="currentEnemySP"></span>
+                  <span> / </span>
+                  <span id="maxEnemySP"></span>
+                  <br><br>
+                  ATTACK: <span id="currentEnemyAttack"></span>
+                  <br>
+                  DEFENSE: <span id="currentEnemyDefense"></span>
+                  <br>
+                  STEALTH: <span id="currentEnemyStealth"></span>
+                  <br>
+                  SENSE: <span id="currentEnemySense"></span>
+                  <br>
+                  CHARISMA: <span id="currentEnemyCharisma"></span>
+                  <br>
+                  KNOWLEDGE: <span id="currentEnemyKnowledge"></span>
+                  <br><br>
+                  STRENGTH: <span id="enemyStrength"></span>
+                  <br>
+                  ENDURANCE: <span id="enemyEndurance"></span>
+                  <br>
+                  FINESSE: <span id="enemyFinesse"></span>
+                  <br>
+                  PERCEPTION: <span id="enemyPerception"></span>
+                  <br>
+                  WITS: <span id="enemyWits"></span>
+                  <br>
+                  INTELLIGENCE: <span id="enemyIntelligence"></span>
+                  <br>
+               </div>
+             </div>
+             <div id="skills" class="tab-pane">
+               <div id="infoSubMenu">
+                <span>PASSIVE ABILITIES</span>
+                <ul id="enemyPassiveAbilities">
+                  <li>Intimidation</li>
+                </ul>
+                <br>
+                <span>WEAKNESSES</span>
+                <ul>
+                  <li>
+                    <span>Physical: Skin Cancer<span id="enemyPhysicalWeakness"></span>
+                  </li>
+                  <li>
+                    <span>Mental: Pyrophobia<span id="enemyMentalWeakness"></span>
+                  </li>
+                </ul>
+                <br>
+                <span>PHYSICAL ABILITIES</span>
+                <ul id="enemyPhysicalAbilities">
+                  <li>Light Attack</li>
+                  <li>Attack</li>
+                  <li>Heavy Attack</li>
+                </ul>
+                <br>
+                <span>MENTAL ABILITIES</span>
+                <ul id="enemyMentalAbilities">
+                  <li>Analyze</li>
+                </ul>
+                <span>TOOL ABILITIES</span>
+                <ul id="enemyToolAbilities">
+                  <li>
+                    <span>Pistol</span>
+                    <ul>
+                      <li>Shoot</li>
+                    </ul>
+                  </li>
+                </ul>
+               </div>
+             </div>
+             <div id="items" class="tab-pane">
+               <div id="infoSubMenu">
+                  <span>HEAD: </span><span id="enemyHeadEquip">None</span>
+                  <br>
+                  <span>BODY: </span><span id="enemyHeadEquip">Denim Jacket</span>
+                  <br>
+                  <span>LEGS: </span><span id="enemyHeadEquip">Jeans</span>
+                  <br>
+                  <span>FEET: </span><span id="enemyHeadEquip">Pointed Shoes</span>
+                  <br>
+                  <span>MISC: </span><span id="enemyHeadEquip">Bandana</span>
+                  <br>
+                  <span>MISC: </span><span id="enemyHeadEquip">Belt</span>
+                  <br>
+                  <span>L. HAND: </span><span id="enemyHeadEquip">Pistol</span>
+                  <br>
+                  <span>R. HAND: </span><span id="enemyHeadEquip">None</span>
+                  <br><br>
+                  <span>INVENTORY</span>             
+                  <ul id="enemyInventory">
+                    <li>Outfit</li>
+                    <li>Pack of Cigs</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+        </div>
 
       <div id="controls">
         <div id="hud" class="row">
@@ -79,16 +209,22 @@
                 <div class="row">
                   <div id="leftHand" class="col-md-6">
                     <div>
-                      <span id="leftToolName"></span>
+                      <h3 id="leftToolName">Left Hand</h3>
                     </div>
-                    <ul id="leftHandAbilities">
+                    <ul id="leftHandAbilities" class="list-unstyled">
+                      <li id="lightAttack" class="combat">Light Attack</li>
+                      <li id="attack" class="combat">Attack</li>
+                      <li id="heavyAttack" class="combat">Heavy Attack</li>
                     </ul>
                   </div>
                   <div id="rightHand" class="col-md-6">
                     <div>
-                      <span id="rightToolName"></span>
+                      <h3 id="rightToolName">Right Hand</h3>
                     </div>
-                    <ul id="rightHandAbilities">
+                    <ul id="rightHandAbilities" class="list-unstyled">
+                      <li id="lightAttack" class="combat">Light Attack</li>
+                      <li id="attack" class="combat">Attack</li>
+                      <li id="heavyAttack" class="combat">Heavy Attack</li>
                     </ul>
                   </div>
                 </div>
@@ -133,16 +269,34 @@
             </div>
 
             <div id="statMenu" class="subMenu tab-pane">
-              <div id="equips">
-
-              </div>
+              <span id="enemySpecies">HUMAN</span><span> - LEVEL </span><span id="enemyLevel">15</span>
+              <br><br>
               <div id="leftStats">
-                <ul id="leftStatList">
-                </ul>
+                <span>STRENGTH: </span><span id="playerStrength"></span>
+                <br>
+                <span>ENDURANCE: </span><span id="playerEndurance"></span>
+                <br>
+                <span>FINESSE: </span><span id="playerFinesse"></span>
+                <br>
+                <span>PERCEPTION: </span><span id="playerPerception"></span>
+                <br>
+                <span>WITS: </span><span id="playerWits"></span>
+                <br>
+                <span>INTELLIGENCE: </span><span id="playerIntelligence"></span>
               </div>
+              <br><br>
               <div id="rightStats">
-                <ul id="rightStatList">
-                </ul>
+                <span>ATTACK: </span><span id="currentPlayerAttack"></span>
+                <br>
+                <span>DEFENSE: </span><span id="currentPlayerDefense"></span>
+                <br>
+                <span>STEALTH: </span><span id="currentPlayerStealth"></span>
+                <br>
+                <span>SENSE: </span><span id="currentPlayerSense"></span>
+                <br>
+                <span>CHARISMA: </span><span id="currentPlayerCharisma"></span>
+                <br>
+                <span>KNOWLEDGE: </span><span id="currentPlayerKnowledge"></span>
               </div>
             </div>
             <div id="moveMenu" class="subMenu tab-pane">

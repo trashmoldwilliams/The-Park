@@ -11,7 +11,7 @@ $(document).ready(function() {
   var enemy = new Character("Cheato", "enemy", new Stats(3, 3, 3, 2, 2, 2));
   player.abilities.push(lightAttack, attack, heavyAttack);
 
-  updateHUD(player);
+  updateHUD(player, enemy);
   var currentBattle = new Battle(player, enemy);
 
 });
