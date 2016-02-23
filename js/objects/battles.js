@@ -1,6 +1,7 @@
 function Battle(player, enemy) {
   this.player = player;
   this.enemy = enemy;
+  this.state = "preperation";
   this.playerCombatDocket = [];
   this.enemyCombatDocket = [];
 }
@@ -17,10 +18,17 @@ Battle.prototype.executeAbility = function (ability, user, opponent) {
 };
 
 Battle.prototype.executeCombat = function() {
+  //Set State
+  this.state = "execution";
+  updateHUD(this.player, this.enemy, this);
+
+  //Determine Order
   var isFirst = "this." + checkFirst(this.player, this.enemy);
   var isSecond = "this." + checkSecond(isFirst);
   var firstDocket = isFirst + "CombatDocket";
   var secondDocket = isSecond + "CombatDocket";
+
+  //Execute Abilities
   for(var i = 0; i < eval(firstDocket).length; i++) {
     this.executeAbility(eval(firstDocket)[i], eval(isFirst), eval(isSecond));
   }
@@ -37,6 +45,8 @@ Battle.prototype.executeCombat = function() {
   this.player.stats.tempCurrentAP = this.player.stats.maxAP;
   this.enemy.stats.currentAP = this.enemy.stats.maxAP;
   this.enemy.stats.tempCurrentAP = this.enemy.stats.maxAP;
+  this.state = "preperation";
+  updateHUD(this.player, this.enemy, this);
 
 };
 

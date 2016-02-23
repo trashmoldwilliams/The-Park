@@ -28,9 +28,8 @@ $(document).ready(function() {
 		updateHUD(player, enemy, battle);
 	});
 
-	$(document.body).on('click','#confirmCombat', function() {
+	$(document.body).on('click','.confirmCombat', function() {
 		battle.executeCombat();
 		updateHUD(player, enemy, battle);
 	});
 });
-

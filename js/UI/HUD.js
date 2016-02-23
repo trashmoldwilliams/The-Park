@@ -68,4 +68,14 @@ var updateHUD = function(player, enemy, battle) {
   for(var i = 0; i < battle.playerCombatDocket.length; i++) {
   	$("#combatDocketLineup").append('<li value="' + (i + 1) + '" class="docketAbility" id=' + battle.playerCombatDocket[i].id + '>' + battle.playerCombatDocket[i].name + '</li>');
   }
+
+  //END TURN Button
+  if(battle.state === "execution")
+  {
+    $('#confirmButton').removeClass();
+    $('#confirmButton').addClass("confirmDisabled btn disabled");
+  } else if(battle.state === "preperation") {
+    $('#confirmButton').removeClass();
+    $('#confirmButton').addClass("confirmCombat btn-danger");
+  }
 }
