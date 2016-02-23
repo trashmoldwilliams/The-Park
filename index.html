@@ -189,9 +189,12 @@
             </span>
           </div>
           <div class="col-md-4">
-            <button id="confirmCombat" class="btn disabled">
+            <button id="confirmCombat" class="btn btn-danger">
               END TURN
             </button>
+            <!-- <button id="confirmCombat" class="btn disabled">
+              END TURN
+            </button> -->
           </div>
         </div>
         <div id="menu" class="menu window">
@@ -305,6 +308,7 @@
         </div>
 
         <div id="combatDocket" class="menu window">
+          <div id="remainingCombatPoints"><h3><span id="tempPlayerAP"></span><span> AP | </span><span id="tempPlayerMP"></span><span> MP</span><h3></div>
           <ol id="combatDocketLineup">
           </ol>
         </div>

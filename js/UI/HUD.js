@@ -1,11 +1,13 @@
-var updateHUD = function(player, enemy) {
+var updateHUD = function(player, enemy, battle) {
   //Player Stats
   $("#currentPlayerHP").text(player.stats.currentHP);
   $("#maxPlayerHP").text(player.stats.maxHP);
   $("#currentPlayerAP").text(player.stats.currentAP);
   $("#maxPlayerAP").text(player.stats.maxAP);
+  $("#tempPlayerAP").text(player.stats.tempCurrentAP);
   $("#currentPlayerMP").text(player.stats.currentMP);
   $("#maxPlayerMP").text(player.stats.maxMP);
+  $("#tempPlayerMP").text(player.stats.tempCurrentMP);
   $("#currentPlayerSP").text(player.stats.currentSP);
   $("#maxPlayerSP").text(player.stats.maxSP);
 
@@ -50,13 +52,20 @@ var updateHUD = function(player, enemy) {
   $("#enemyIntelligence").text(enemy.stats.intelligence);
 
   //Player Abilities
-  $("#leftHandAbilities").text("");
+
+	$("#leftHandAbilities").text("");
   for(var i = 0; i < player.abilities.length; i++) {
-    $("#leftHandAbilities").append('<p id="' + player.abilities[i].id + '" class="ability leftHand">' + player.abilities[i].name + '</p>');
+    $("#leftHandAbilities").append('<p id="' + player.abilities[i].id + '" class="' + player.abilities[i].type + ' activeAbility leftHand">' + player.abilities[i].name + '</p>');
   }
 
   $("#rightHandAbilities").text("");
   for(var i = 0; i < player.abilities.length; i++) {
-    $("#rightHandAbilities").append('<p id="' + player.abilities[i].id + '" class="ability rightHand">' + player.abilities[i].name + '</p>');
+    $("#rightHandAbilities").append('<p id="' + player.abilities[i].id + '" class="' + player.abilities[i].type + ' activeAbility rightHand">' + player.abilities[i].name + '</p>');
+  }
+
+  //Combat Docket
+  $("#combatDocketLineup").text("");
+  for(var i = 0; i < battle.playerCombatDocket.length; i++) {
+  	$("#combatDocketLineup").append('<li value="' + (i + 1) + '" class="docketAbility" id=' + battle.playerCombatDocket[i].id + '>' + battle.playerCombatDocket[i].name + '</li>');
   }
 }

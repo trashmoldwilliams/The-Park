@@ -29,6 +29,15 @@ Battle.prototype.executeCombat = function() {
     this.executeAbility(eval(secondDocket)[i], eval(isSecond), eval(isFirst));
   }
 
+
+  //Reset Turn
+  this.playerCombatDocket = [];
+  this.enemyCombatDocket = [];
+  this.player.stats.currentAP = this.player.stats.maxAP;
+  this.player.stats.tempCurrentAP = this.player.stats.maxAP;
+  this.enemy.stats.currentAP = this.enemy.stats.maxAP;
+  this.enemy.stats.tempCurrentAP = this.enemy.stats.maxAP;
+
 };
 
 var checkFirst = function(player, enemy) {

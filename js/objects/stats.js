@@ -12,8 +12,10 @@ function Stats(strength, endurance, finesse, perception, wits, intelligence) {
 	this.maxHP = endurance * 50;
 	this.currentAP = finesse * 10;
 	this.maxAP = finesse * 10;
+	this.tempCurrentAP = finesse * 10;
 	this.currentMP = perception * 10 + wits * 10 + intelligence * 10;
 	this.maxMP = perception * 10 + wits * 10 + intelligence * 10;
+	this.tempCurrentMP = perception * 10 + wits * 10 + intelligence * 10;
 	this.currentSP = 10 + endurance;
 	this.maxSP = 10 + endurance;
 
