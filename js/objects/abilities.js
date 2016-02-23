@@ -17,12 +17,12 @@ Ability.prototype.meleeAttack = function (user, target) {
 
 var defineAbilities = function() {
 
-  var lightAttack = new Ability(0, "Light Attack", "combat", "meleeAttack", "opponent", "AP", 10, .5);
+  var quickAttack = new Ability(0, "Quick Attack", "combat", "meleeAttack", "opponent", "AP", 10, .5);
   var attack = new Ability(1, "Attack", "combat", "meleeAttack", "opponent", "AP", 30, 1);
   var heavyAttack = new Ability(2, "Heavy Attack", "combat", "meleeAttack", "opponent", "AP", 50, 2);
 
   var abilityPool = [
-    lightAttack,
+    quickAttack,
     attack,
     heavyAttack
 

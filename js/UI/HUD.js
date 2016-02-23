@@ -1,4 +1,5 @@
 var updateHUD = function(player, enemy) {
+  //Player Stats
   $("#currentPlayerHP").text(player.stats.currentHP);
   $("#maxPlayerHP").text(player.stats.maxHP);
   $("#currentPlayerAP").text(player.stats.currentAP);
@@ -22,6 +23,9 @@ var updateHUD = function(player, enemy) {
   $("#playerWits").text(player.stats.wits);
   $("#playerIntelligence").text(player.stats.intelligence);
 
+
+  //Enemy Stats
+
   $("#currentEnemyHP").text(enemy.stats.currentHP);
   $("#maxEnemyHP").text(enemy.stats.maxHP);
   $("#currentEnemyAP").text(enemy.stats.currentAP);
@@ -44,4 +48,15 @@ var updateHUD = function(player, enemy) {
   $("#enemyPerception").text(enemy.stats.perception);
   $("#enemyWits").text(enemy.stats.wits);
   $("#enemyIntelligence").text(enemy.stats.intelligence);
+
+  //Player Abilities
+  $("#leftHandAbilities").text("");
+  for(var i = 0; i < player.abilities.length; i++) {
+    $("#leftHandAbilities").append('<p id="' + player.abilities[i].id + '" class="ability leftHand">' + player.abilities[i].name + '</p>');
+  }
+
+  $("#rightHandAbilities").text("");
+  for(var i = 0; i < player.abilities.length; i++) {
+    $("#rightHandAbilities").append('<p id="' + player.abilities[i].id + '" class="ability rightHand">' + player.abilities[i].name + '</p>');
+  }
 }
