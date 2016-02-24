@@ -14,7 +14,9 @@ Battle.prototype.executeAbility = function (ability, user, opponent) {
   }
 
   var execution = "ability." + ability.method + "(user, target);";
-  eval(execution);
+  var damage = eval(execution);
+  $("#gameLogContent").prepend('<li>you jab ' + target.id + ' in the torso with your fist for ' +  + (damage) + ' damage,</li>');
+  // $("#gameLogContent").prepend('<li>' + user.id + ' ' + 'jabs ' + target.id + ' in the torso with their fist for ' +  + (damage) + ' damage!</li>');
 };
 
 Battle.prototype.executeCombat = function() {

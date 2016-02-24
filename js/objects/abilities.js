@@ -13,8 +13,7 @@ Ability.prototype.meleeAttack = function (user, target) {
   var input = "user.stats.current" + this.inputType + " -= this.inputVal;"
   eval(input);
   target.stats.currentHP -= user.stats.attack * this.multiplier;
-  $("#gameLogContent").prepend('<li>' + (user.stats.attack * this.multiplier) + ' HP of damage to ' + target.id + '!</li>');
-  $("#gameLogContent").prepend('<li>' + user.id + ' attacks!</li>');
+  return (user.stats.attack * this.multiplier);
 };
 
 var defineAbilities = function() {
