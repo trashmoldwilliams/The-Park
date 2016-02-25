@@ -1,45 +1,86 @@
-var gamelogAttack = function() {
-  //If i = 0
-    //If user = "player ": add "You "
-    //else: add user + " "
-  //Else: add "and then "
+var gamelogAttack = function(docket, user, target, ability, damage, i) {
+	var output = "";
 
-  //If meleeAttack
-    //if quickattack: add "quickly "
-    //else if strongattack: add strongweaponadjective
-  //Else:
-    //add weapon adjective
+  if(i === 0) {
+  	if(user.alignment === "player") {
+  		output += "you";
+  	} else {
+  		output += user.id;
+  	}
+  } else {
+  	output += "and then";
+  }
 
-  //If enemyform
-    //add adjectivesuffix
+  output += " ";
+  
+  if(ability.method === "meleeAttack") {
+  	if(ability.id === 0) {
+  		output += "quickly ";
+  	} else if (ability.id === 2) {
+  		output += "strongly ";
+  	}
+  }
 
-  //add " "
+  output += "jab";
 
-  //if targeted attack
-    //If user = enemy: add "your "
-    //else: add username + " "
+  if(user.alignment === "enemy") {
+  	output += "s";
+  }
+  
+  output += " ";
 
-    //add "in the "
+  // if(bodyTarget != "N/A") {
+  // 	if(user.alignment === "enemy") {
+  // 		output += "your"
+  // 	} else {
+  // 		if(i === 0) {
+  // 			output += target.id;
+  // 			output += " in the";
+  // 		} else {
+  // 			output += "their";
+  // 		}
+  // 	}
 
-    //add targetbodypart + " "
-  //else
-    //If user = enemy: add "you "
+  // 	output += " ";
+  // 	output += bodyTarget;
+  // } else {
+  	if(user.alignment === "enemy") {
+  		output += "you";
+  	} else {
+  		if(i === 0) {
+  			output += target.id;
+  		}else {
+  			output += "them"
+  		}
+  	}
+  // }
 
-  //add "with "
+  output += " with ";
 
-  //if user = player: add "your "
-  //else: add "their "
+  if(user.alignment === "player") {
+  	output += "your ";
+  } else {
+  	output += "their ";
+  }
 
-  //add weaponname + " for "
+	output += "fist";
+	output += " for ";
 
-  //add damage + " "
+  output += damage;
+  output += " HP";
 
-  //add "HP"
+  // if(bodyTarget != "N/A") {
+  // 	output += "and ";
+  // 	output += targetDamage;
+  // 	output += " ";
+  // 	output += targetType;
+  // }
 
-  //if targetedattack
-    //add "and " + targetdamage + " " + targettype
+  if(i === docket.length - 1) {
+  	output += "!";
+  } else {
+  	output += ",";
+  }
 
-  //if i = docketlength: add "!"
-  //else: add ","
-
+  $("#gameLogContent").prepend('<li>' + output + '</li>');
 }

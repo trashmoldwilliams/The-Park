@@ -1,4 +1,4 @@
-function Ability(id, name, type, method, target, inputType, inputVal, multiplier) {
+function Ability(id, name, type, method, target, inputType, inputVal, multiplier, adjective, suffix) {
   this.id = id;
   this.name = name;
   this.type = type;
@@ -7,6 +7,8 @@ function Ability(id, name, type, method, target, inputType, inputVal, multiplier
   this.inputType = inputType;
   this.inputVal = inputVal;
   this.multiplier = multiplier;
+  // this.adjective = adjective;
+  // this.suffix = suffix;
 }
 
 Ability.prototype.meleeAttack = function (user, target) {

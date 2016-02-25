@@ -9,18 +9,14 @@ describe('Battle', function() {
   var enemy = new Character("Zebdiel", "enemy", new Stats(3, 3, 3, 2, 2, 2));
   player.abilities.push(abilityPool[0], abilityPool[1], abilityPool[2]);
 
-  updateHUD(player, enemy);
   var currentBattle = new Battle(player, enemy);
 
   currentBattle.playerCombatDocket.push(abilityPool[0], abilityPool[0]);
   currentBattle.enemyCombatDocket.push(abilityPool[1]);
 
-  it("will execute melee attacks from combat dockets", function() {
-    currentBattle.executeCombat();
-    expect(enemy.stats.currentHP).to.equal(130);
-    expect(enemy.stats.currentAP).to.equal(0);
-    expect(player.stats.currentHP).to.equal(70);
-    expect(player.stats.currentAP).to.equal(0);
+  it("will output a description of a combat ability", function() {
+    var text = gamelogAttack(currentBattle.playerCombatDocket, player, enemy, abilityPool[2], 10, 0);
+    expect(text).to.equal("");
   });
 });
 
@@ -39,4 +35,4 @@ describe('checkSpeed', function() {
   it("will check who currently has the lowest max AP", function() {
     expect(isSecond).to.equal("player");
   });
-})
+});

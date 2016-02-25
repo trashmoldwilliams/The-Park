@@ -6,7 +6,7 @@ function Battle(player, enemy) {
   this.enemyCombatDocket = [];
 }
 
-Battle.prototype.executeAbility = function (ability, user, opponent) {
+var executeAbility = function (ability, user, opponent, i, docket) {
   if(ability.target === "opponent") {
     var target = opponent;
   } else {
@@ -15,8 +15,7 @@ Battle.prototype.executeAbility = function (ability, user, opponent) {
 
   var execution = "ability." + ability.method + "(user, target);";
   var damage = eval(execution);
-  $("#gameLogContent").prepend('<li>you jab ' + target.id + ' in the torso with your fist for ' +  + (damage) + ' damage,</li>');
-  // $("#gameLogContent").prepend('<li>' + user.id + ' ' + 'jabs ' + target.id + ' in the torso with their fist for ' +  + (damage) + ' damage!</li>');
+  gamelogAttack(docket, user, target, ability, damage, i);
 };
 
 Battle.prototype.executeCombat = function() {
@@ -32,11 +31,11 @@ Battle.prototype.executeCombat = function() {
 
   //Execute Abilities
   for(var i = 0; i < eval(firstDocket).length; i++) {
-    this.executeAbility(eval(firstDocket)[i], eval(isFirst), eval(isSecond));
+    executeAbility(eval(firstDocket)[i], eval(isFirst), eval(isSecond), i, eval(firstDocket));
   }
 
   for(var i = 0; i < eval(secondDocket).length; i++) {
-    this.executeAbility(eval(secondDocket)[i], eval(isSecond), eval(isFirst));
+    executeAbility(eval(secondDocket)[i], eval(isSecond), eval(isFirst), i, eval(secondDocket))
   }
 
 

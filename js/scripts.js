@@ -4,9 +4,9 @@ $(document).ready(function() {
 	var abilityPool = defineAbilities();
 
   //Define Characters
-	var player = new Character("Bobbie", "player", new Stats(2, 2, 2, 3, 3, 3));
-	player.abilities.push(abilityPool[0], abilityPool[1]);
-  var enemy = new Character("Zebdiel", "enemy", new Stats(3, 3, 3, 2, 2, 2));
+	var player = new Character("Bobbie", "player", new Stats(10, 10, 10, 3, 3, 3));
+	player.abilities.push(abilityPool[0], abilityPool[1], abilityPool[2]);
+  var enemy = new Character("Zebdiel", "enemy", new Stats(3, 3, 11, 2, 2, 2));
   enemy.abilities.push(abilityPool[0], abilityPool[1], abilityPool[2]);
 
   var battle = new Battle(player, enemy);
