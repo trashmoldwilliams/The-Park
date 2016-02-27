@@ -4,6 +4,7 @@ function Ability(id, name, type, method, target, inputType, inputVal, multiplier
   this.type = type;
   this.method = method;
   this.target = target;
+  this.isAccurate = isAccurate;
   this.inputType = inputType;
   this.inputVal = inputVal;
   this.multiplier = multiplier;
