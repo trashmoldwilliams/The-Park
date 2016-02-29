@@ -55,12 +55,12 @@ var updateHUD = function(player, enemy, battle) {
 
 	$("#leftHandAbilities").text("");
   for(var i = 0; i < player.abilities.length; i++) {
-    $("#leftHandAbilities").append('<p id="' + player.abilities[i].id + '" class="' + player.abilities[i].type + ' activeAbility leftHand">' + player.abilities[i].name + '</p>');
+    $("#leftHandAbilities").append('<p id="' + player.abilities[i].id + '" class="' + player.loadout.leftHand + ' leftHand none' + player.abilities[i].type + ' activeAbility">' + player.abilities[i].name + '</p>');
   }
 
   $("#rightHandAbilities").text("");
   for(var i = 0; i < player.abilities.length; i++) {
-    $("#rightHandAbilities").append('<p id="' + player.abilities[i].id + '" class="' + player.abilities[i].type + ' activeAbility rightHand">' + player.abilities[i].name + '</p>');
+    $("#rightHandAbilities").append('<p id="' + player.abilities[i].id + '" class="' + player.loadout.rightHand + ' rightHand none' + player.abilities[i].type + ' activeAbility">' + player.abilities[i].name + '</p>');
   }
 
   //Combat Docket

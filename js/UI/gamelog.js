@@ -1,4 +1,4 @@
-var gamelogAttack = function(docket, user, target, ability, damage, i) {
+var gamelogAttack = function(SlatedAbility) {
 	var output = "";
 
   if(i === 0) {
@@ -12,7 +12,7 @@ var gamelogAttack = function(docket, user, target, ability, damage, i) {
   }
 
   output += " ";
-  
+
   if(ability.method === "meleeAttack") {
   	if(ability.id === 0) {
   		output += "quickly ";
@@ -26,10 +26,10 @@ var gamelogAttack = function(docket, user, target, ability, damage, i) {
   if(user.alignment === "enemy") {
   	output += "s";
   }
-  
+
   output += " ";
 
-  // if(bodyTarget != "N/A") {
+  // if(bodyTarget != "none") {
   // 	if(user.alignment === "enemy") {
   // 		output += "your"
   // 	} else {
@@ -69,7 +69,7 @@ var gamelogAttack = function(docket, user, target, ability, damage, i) {
   output += damage;
   output += " HP";
 
-  // if(bodyTarget != "N/A") {
+  // if(bodyTarget != "none") {
   // 	output += "and ";
   // 	output += targetDamage;
   // 	output += " ";
