@@ -65,7 +65,7 @@ var updateHUD = function(player, enemy, battle) {
 
   //Combat Docket
   $("#combatDocketLineup").text("");
-  for(var i = 0; i < battle.playerCombatDocket.length; i++) {
+  for(var i = 0; i < player.combatDocket.length; i++) {
   	$("#combatDocketLineup").append('<li value="' + (i + 1) + '" class="docketAbility" id=' + battle.playerCombatDocket[i].id + '>' + battle.playerCombatDocket[i].name + '</li>');
   }
 

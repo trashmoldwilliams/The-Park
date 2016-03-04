@@ -1,4 +1,4 @@
-function Ability(id, name, type, method, target, inputType, inputVal, multiplier, adjective, suffix) {
+function Ability(id, name, type, method, target, isAccurate, inputType, inputVal, multiplier, adjective, suffix) {
   this.id = id;
   this.name = name;
   this.type = type;
