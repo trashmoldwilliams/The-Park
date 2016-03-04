@@ -63,6 +63,26 @@ body {
 	color: grey;
 }
 
+#targetContainer {
+	background-color: #ff9999;
+	width: 400px;
+	height: 240px;
+	border-radius: 10px;
+	position: absolute;
+	margin-left: 1%;
+	margin-bottom: 1%;
+  bottom: 0;
+	left: 0;
+	z-index: 2;
+}
+
+#targetContainer img {
+	position: absolute;
+  top: 7%;
+  left: 15%;
+	width: 65%;
+}
+
 #mapContainer {
 	background-color: #99ccff;
 	width: 125px;
@@ -208,4 +228,116 @@ a:hover {
   top: 50%;
   transform: translateY(-50%);
 	overflow-y: scroll;
+}
+
+#brainContainer {
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 5%;
+  top: 0;
+	left: 0;
+}
+
+#rightEyeContainer {
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 12%;
+  top: 0;
+	left: 0;
+}
+
+#rightArmContainer {
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 19%;
+  top: 0;
+	left: 0;
+}
+
+#rightHandContainer {
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 25%;
+  top: 0;
+	left: 0;
+}
+
+#torsoContainer {
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 36%;
+  top: 0;
+	left: 0;
+}
+
+#rightLegContainer {
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 52%;
+  top: 0;
+	left: 0;
+}
+
+#headContainer {
+	position: absolute;
+	margin-right: 9%;
+	margin-top: 3%;
+  top: 0;
+	right: 0;
+}
+
+#leftEyeContainer {
+	position: absolute;
+	margin-right: 9%;
+	margin-top: 8%;
+  top: 0;
+	right: 0;
+}
+
+#mouthContainer {
+	position: absolute;
+	margin-right: 9%;
+	margin-top: 14%;
+  top: 0;
+	right: 0;
+}
+
+#leftArmContainer {
+	position: absolute;
+	margin-right: 9%;
+	margin-top: 19%;
+  top: 0;
+	right: 0;
+}
+
+#leftHandContainer {
+	position: absolute;
+	margin-right: 9%;
+	margin-top: 24%;
+  top: 0;
+	right: 0;
+}
+
+#heartContainer {
+	position: absolute;
+	margin-right: 9%;
+	margin-top: 29%;
+  top: 0;
+	right: 0;
+}
+
+#innerTorsoContainer {
+	position: absolute;
+	margin-right: 9%;
+	margin-top: 35%;
+  top: 0;
+	right: 0;
+}
+
+#leftLegContainer {
+	position: absolute;
+	margin-right: 9%;
+	margin-top: 52%;
+  top: 0;
+	right: 0;
 }
