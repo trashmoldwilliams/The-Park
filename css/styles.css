@@ -177,8 +177,26 @@ a:hover {
 	float: left;
 }
 
-#toolMenu {
+#rightToolHeader img {
+	width: 7%;
+}
 
+#leftToolHeader img {
+	width: 7%;
+}
+
+#rightHandAbilities img {
+	width: 7%;
+	position: absolute;
+	margin-right: 34.5%;
+	right: 0;
+}
+
+#leftHandAbilities img {
+	width: 7%;
+	position: absolute;
+	margin-right: 34.5%;
+	right: 0;
 }
 
 #toolMenuTwoHand {
